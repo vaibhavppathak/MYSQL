@@ -1,9 +1,9 @@
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('Address', 'root', 'java@123');
-// the middleware function
-// create schema 
+
+// the middleware function 
 module.exports = function() {
-    var user_address = sequelize.define('abc', {
+    var user_address = sequelize.define('details', {
         address: Sequelize.STRING,
         city: Sequelize.STRING,
         state: Sequelize.STRING,

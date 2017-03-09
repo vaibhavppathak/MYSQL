@@ -28,7 +28,12 @@ router.post('/user/address', function(req, res, next) {
                 res.json({ status: 1, messgae: "address inserted sucessfully" })
                 next();
             }
-        });
+        }).catch(function(error) {
+            if (error) {
+                req.err = "Details already exists";
+                next(req.err);
+            }
+        })
     } else {
         req.err = "All field must be filled out";
         next(req.err)
